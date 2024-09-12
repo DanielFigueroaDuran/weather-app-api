@@ -9,6 +9,6 @@ export const countries: Contries[] = [
       { code: 'CO', name: 'Colombia' },
       { code: 'CR', name: 'Costa Rica' },
       { code: 'ES', name: 'España' },
-      { code: 'PE', name: 'Perú' },
+      { code: 'FR', name: 'Francia' },
 
 ]
