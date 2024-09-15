@@ -3,7 +3,7 @@ import { z } from "zod";
 //import { object, string, number, InferOutput, parse } from "valibot";
 import { SearchType } from "../types";
 import { isWeatherResponse } from "../helpers";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 //--------zod-----------
 
@@ -107,9 +107,12 @@ const useWeather = () => {
             }
       }
 
+      const hasWeatherData = useMemo(() => weather.name, [weather]);
+
       return {
             weather,
-            fetchWeather
+            fetchWeather,
+            hasWeatherData
       }
 
 
