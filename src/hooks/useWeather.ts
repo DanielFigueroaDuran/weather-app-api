@@ -43,9 +43,9 @@ const initialState = {
 
 const useWeather = () => {
 
-      const [weather, setWeather] = useState<Weather>(initialState)
-
+      const [weather, setWeather] = useState<Weather>(initialState);
       const [loading, setLoading] = useState(false);
+      const [notFount, setNotFount] = useState(false);
 
       //console.log(weather);
 
@@ -60,6 +60,13 @@ const useWeather = () => {
                   ${search.city},${search.country}&appid=${appId}`;
 
                   const { data } = await axios(geoUrl);
+
+                  //check if it exists
+
+                  if (!data[0]) {
+                        setNotFount(true);
+                        return
+                  }
 
                   const lat = data[0].lat;
                   const lon = data[0].lon;
@@ -122,6 +129,7 @@ const useWeather = () => {
       return {
             weather,
             loading,
+            notFount,
             fetchWeather,
             hasWeatherData
       }
