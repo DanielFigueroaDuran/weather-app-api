@@ -56,7 +56,7 @@ const useWeather = () => {
             setWeather(initialState);
 
             try {
-                  const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=
+                  const geoUrl = `//api.openweathermap.org/geo/1.0/direct?q=
                   ${search.city},${search.country}&appid=${appId}`;
 
                   const { data } = await axios(geoUrl);
@@ -74,7 +74,7 @@ const useWeather = () => {
                   // console.log(lat);
                   // console.log(lon);
 
-                  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`
+                  const weatherUrl = `//api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`
                   //console.log(weatherUrl);
 
                   // ---------Castear el type------------
